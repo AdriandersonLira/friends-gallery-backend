@@ -24,7 +24,7 @@ class Session(Resource):
       
       payload = {
         "_id": dbResponse["_id"],
-        "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=10)
+        "exp": datetime.datetime.utcnow() + datetime.timedelta(minutes=30)
       }
 
       token = jwt.encode(payload, app.secret_key, algorithm='HS256')

@@ -2,6 +2,13 @@
 
 -Commands
 ```
+$ py -m venv venv
+
+No Windows, execute:
+$ cd ./venv/Scripts/activate.bat
+No Unix ou no MacOS, executa:
+$ source venv/bin/activate
+
 $ pip install flask-restx
 $ pip install typing-extensions
 $ pip install pymongo
@@ -48,8 +55,8 @@ $ python -m flask run or $ python main.py
     - create moment
       {
         "idMoment": _id
+        "idGallery": _id,
         "idUser": _id,
-        "idAdmin": _id,
         "picture": filename,
         "likes": int,
         "approved": null or boolean,
@@ -62,14 +69,14 @@ $ python -m flask run or $ python main.py
     - delete moment
 
 
-[ ] gallery
+[x] gallery
   - get gallery
 
-  - post 
+  - post (apenas uma gallery por admin)
     - create gallery
       {
         "idGallery": _id
-        "nameGallery": str
+        "name": str
         "admins": max 2 {"idsUsers"},
         "moments": {"idsMoments"}
         "password": str,
